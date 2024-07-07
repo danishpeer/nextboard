@@ -1,7 +1,7 @@
 import type { NextAuthConfig } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
- 
+
 export const authConfig = {
 
     //This means that when NextAuth.js redirects to the sign-in page when trying to access the protected api, it will use the route specified in signIn.
@@ -19,11 +19,11 @@ export const authConfig = {
             return false;
         }
         else if(isLoggedIn){
-            return Response.redirect(new URL('/dashboard', nextUrl) )
+            return Response.redirect(new URL('/dashboard', nextUrl))
         }
         return true;
 
-    }
+    },
   },
   providers: []
 } satisfies NextAuthConfig;
